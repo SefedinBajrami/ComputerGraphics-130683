@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { contain } from 'three/src/extras/TextureUtils.js';
 
 const scene = new THREE.Scene();
 
@@ -60,6 +59,7 @@ scene.add(spotLightHelper);
 
 const container = document.getElementById('scene1');
 const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
 container.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
